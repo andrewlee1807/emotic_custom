@@ -123,6 +123,11 @@ AAE (the lower, the better), the results are shown in Table 1 and Table 2.
 | Dominance             | 1.02 | 1.01 | 1.03 | 1.03 | 1.03 |
 | Mean                  | 1.04 | 1.02 | 1.05 | 1.02 | 1.01 |
 
+Last experiment was
+running: ```python main.py --gpu 0 --mode train --data_path data/emotic_pre --experiment_path proj/debug_exp_effici4-5 --epochs 50 --body_model resnet50 --context_model resnet50 --batch_size 28```
+(Because of Models is huge, so batch_size is just 28 to adapt with environment.)
+
+
 # References
 
 [EMOTIC](https://github.com/Tandon-A/emotic)

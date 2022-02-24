@@ -181,7 +181,9 @@ def train_emotic(result_path, model_path, train_log_path, val_log_path, ind2cat,
     # Prepare models
     model_context, model_body = prep_models(context_model=args.context_model, body_model=args.body_model,
                                             model_dir=model_path)
-    emotic_model = Emotic(list(model_context.children())[-1].in_features, list(model_body.children())[-1].in_features)
+    # emotic_model = Emotic(list(model_context.children())[-1].in_features, list(model_body.children())[-1].in_features)
+    # emotic_model = Emotic(list(list(model_context.children())[-1].children())[-1].in_features, list(model_body.children())[-1].in_features)
+    emotic_model = Emotic(list(list(model_context.children())[-1].children())[-1].in_features, list(list(model_body.children())[-1].children())[-1].in_features) # both imodels are efficient
     model_context = nn.Sequential(*(list(model_context.children())[:-1]))
     model_body = nn.Sequential(*(list(model_body.children())[:-1]))
 

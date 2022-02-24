@@ -7,7 +7,7 @@ from inference import inference_emotic
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--gpu', type=int, default=0, help='gpu id')
+    parser.add_argument('--gpu', type=int, default=1, help='gpu id')
     parser.add_argument('--mode', type=str, default='train_test', choices=['train', 'test', 'train_test', 'inference'])
     parser.add_argument('--data_path', type=str, help='Path to preprocessed data npy files/ csv files')
     parser.add_argument('--experiment_path', type=str, required=True,

@@ -1,0 +1,7 @@
+proj
+data
+__pycache__
+*.pyc
+*.jpg
+events*
+

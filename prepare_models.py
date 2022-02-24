@@ -49,13 +49,16 @@ def prep_models(context_model='resnet18', body_model='resnet18', model_dir='./')
   # model_context.cpu()
   # torch.save(model_context, os.path.join(model_dir, 'context_model' + '.pth'))
 
-  model_context = models.resnet18(pretrained=True)
+  # model_context = models.resnet18(pretrained=True)
+  # model_context = models.__dict__[context_model](pretrained=True)
+  model_context = models.efficientnet_b4(pretrained=True)
   model_context.cpu()
   torch.save(model_context, os.path.join(model_dir, 'context_model' + '.pth'))
   
   print ('completed preparing context model')
 
-  model_body = models.__dict__[body_model](pretrained=True)
+  # model_body = models.__dict__[body_model](pretrained=True)
+  model_body = models.efficientnet_b5(pretrained=True)
   model_body.cpu()
   torch.save(model_body, os.path.join(model_dir, 'body_model' + '.pth'))
 
